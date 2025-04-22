@@ -26,36 +26,46 @@ function App() {
     [input, from, to]
   );
   return (
-    <div className="app">
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(Number(e.target.value))}
-        disabled={isLoading}
-      />
-      <select
-        value={from}
-        onChange={(e) => setFrom(e.target.value)}
-        disabled={isLoading}
-      >
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-        <option value="INR">INR</option>
-      </select>
-      <select
-        value={to}
-        onChange={(e) => setTo(e.target.value)}
-        disabled={isLoading}
-      >
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-        <option value="INR">INR</option>
-      </select>
-      <p>
-        Result: {result} {to}
-      </p>
+    <div className="app bg-stone-50 text-center p-10 rounded-xl">
+      <h1 className="text-4xl text-yellow-700 font-semibold  text-clifford text-center pb-10">
+        Currency Converter
+      </h1>
+      <div className="converter flex flex-col">
+        <div className="input-container">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(Number(e.target.value))}
+            disabled={isLoading}
+            className="border-1 border-solid border-black mr-4"
+          />
+          <select
+            className="border-1 border-solid border-black mr-4"
+            value={from}
+            onChange={(e) => setFrom(e.target.value)}
+            disabled={isLoading}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="INR">INR</option>
+          </select>
+          <select
+            className="border-1 border-solid border-black"
+            value={to}
+            onChange={(e) => setTo(e.target.value)}
+            disabled={isLoading}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="INR">INR</option>
+          </select>
+        </div>
+        <p className="pt-8">
+          Result: {result} {to}
+        </p>
+      </div>
     </div>
   );
 }
