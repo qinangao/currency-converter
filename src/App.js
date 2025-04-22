@@ -26,8 +26,8 @@ function App() {
     [input, from, to]
   );
   return (
-    <div className="app bg-stone-50 text-center p-10 rounded-xl">
-      <h1 className="text-4xl text-yellow-700 font-semibold  text-clifford text-center pb-10">
+    <div className="app bg-stone-50 text-center w-[320px] sm:w-full p-0 sm:p-10 rounded-xl">
+      <h1 className="sm:text-4xl text-2xl text-yellow-700 font-semibold  text-clifford text-center py-4 sm:pb-10">
         Currency Converter
       </h1>
       <div className="converter flex flex-col">
@@ -40,7 +40,7 @@ function App() {
             className="border-1 border-solid border-black mr-4"
           />
           <select
-            className="border-1 border-solid border-black mr-4"
+            className="border-1 border-solid border-black mr-4 mt-4"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
             disabled={isLoading}
@@ -62,7 +62,7 @@ function App() {
             <option value="INR">INR</option>
           </select>
         </div>
-        <p className="pt-8">
+        <p className="pt-8 pb-4">
           Result: {result} {to}
         </p>
       </div>
